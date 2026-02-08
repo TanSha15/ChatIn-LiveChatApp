@@ -78,7 +78,7 @@ const LoginPage = () => {
             )}
 
             <h2 className="text-xl font-semibold text-base-content/90 mt-2">Welcome Back</h2>
-            <p className="text-sm text-base-content/60">Sign in to continue your language journey</p>
+            <p className="text-sm text-base-content/60">Sign in to connect with your friends</p>
           </div>
 
           <form onSubmit={handleLogin} className="flex flex-col gap-4 w-full">
@@ -177,7 +177,7 @@ const LoginPage = () => {
             
             <h3 className="text-2xl font-bold text-base-content mb-2">Connect Worldwide</h3>
             <p className="text-base-content/60 max-w-sm">
-              Connect with language partners and make new friends around the globe.
+              Connect with friends around the globe.
             </p>
           </div>
         </div>

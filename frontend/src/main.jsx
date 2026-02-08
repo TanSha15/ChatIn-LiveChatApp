@@ -16,8 +16,10 @@ import {
 
 const queryClient = new QueryClient()
 
-const savedTheme = localStorage.getItem("streamify-theme") || "coffee";
+// Always dark as fallback
+const savedTheme = localStorage.getItem("streamify-theme") ?? "dark";
 document.documentElement.setAttribute("data-theme", savedTheme);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
