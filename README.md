@@ -1,4 +1,4 @@
-# ChatIn — Real-Time Language Exchange Platform
+# ChatIn — Real-Time Global Communication Platform
 
 ## Live Demo
 
