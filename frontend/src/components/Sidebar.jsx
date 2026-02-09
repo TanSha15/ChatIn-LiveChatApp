@@ -45,11 +45,6 @@ const Sidebar = () => {
           <span>Home</span>
         </Link>
 
-        <Link to="/friends" className={getLinkClass("/friends")}>
-          <UsersIcon className="size-5" />
-          <span>Friends</span>
-        </Link>
-
         <Link to="/notifications" className={getLinkClass("/notifications")}>
           <div className="relative">
             <BellIcon className="size-5" />
