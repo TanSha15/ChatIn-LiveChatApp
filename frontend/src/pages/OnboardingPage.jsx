@@ -163,7 +163,7 @@ const OnboardingPage = () => {
 
               <div className="form-control w-full">
                 <label className="label pt-0 pb-1">
-                  <span className="label-text font-medium text-base-content/70">Learning</span>
+                  <span className="label-text font-medium text-base-content/70">Second Language</span>
                 </label>
                 <div className="relative">
                   <Languages className="w-5 h-5 text-base-content/40 absolute top-1/2 -translate-y-1/2 left-3 z-10" />
