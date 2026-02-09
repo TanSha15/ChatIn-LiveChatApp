@@ -1,199 +1,296 @@
-ChatIn — Real-Time Language Exchange Platform
-ChatIn connects language learners worldwide through instant messaging and voice calls. Built with a scalable MERN stack and real-time Stream SDK integration, it delivers seamless communication with secure authentication, persistent profiles, and personalized themes.
+# ChatIn — Real-Time Language Exchange Platform
 
-Live Demo
-Launch ChatIn - https://chatin-livechatapp.onrender.com
+## Live Demo
 
-✨ Core Features
-Secure Authentication
-JWT tokens stored in HTTP-only cookies
+[https://chatin-livechatapp.onrender.com]
 
-Protected routes with automatic session validation
+---
 
-Persistent login state across browser sessions
+## Overview
 
-Secure logout with immediate redirects
+ChatIn is a full‑stack real‑time communication platform designed to connect users based on language preferences. The application enables users to discover others, chat instantly, and initiate calls while maintaining secure authentication and persistent user profiles.
 
-Comprehensive User Onboarding
-Multi-step profile completion flow
+The platform focuses on real‑time interaction, scalable architecture, and user personalization through onboarding, themes, and protected communication routes.
 
-Profile picture upload and management
+The system follows a modern client–server architecture using the MERN stack combined with real‑time communication services and optimized state management.
 
-Native/secondary language preferences
+---
 
-Location and bio customization
+## Core Features
 
-Persistent profile state across sessions
+### Authentication & Security
 
-Real-Time Messaging
-Instant message delivery with typing indicators
+* Secure JWT authentication using HTTP‑only cookies
+* Login and signup flow
+* Protected routes based on authentication state
+* Persistent session handling
+* Automatic redirect on logout
 
-Optimistic UI updates via React Query
+### User Onboarding
 
-Message persistence and caching
+* Profile completion after signup
+* Profile picture support
+* Bio and location storage
+* Native and secondary language preferences
+* Stored user profile state across sessions
 
-Dynamic conversation routing
+### Real‑Time Chat
 
-Voice Calling
-One-to-one WebRTC calling
+* Instant messaging between users
+* Typing indicators
+* Message persistence
+* Conversation routing via dynamic routes
+* Optimistic UI updates using React Query caching
 
-Dynamic call route generation
+### Calls
 
-Streamlined connection handling
+* One‑to‑one calling support
+* Dynamic call routes
+* Stream based communication integration
 
-Robust stream-based communication
+### Notifications System
 
-Smart Notifications
-Real-time friend request alerts
+* Friend request notifications
+* Interaction updates
+* Dedicated notifications page
 
-Interaction and message notifications
+### Theme System
 
-Dedicated notifications dashboard
+* Multiple UI themes using DaisyUI
+* Persistent theme selection using Zustand
+* Theme applied globally using HTML data attributes
 
-Customizable Themes
-Multiple DaisyUI themes
+### Routing & Access Control
 
-Persistent theme selection via Zustand
+* Auth‑guarded pages
+* Onboarding guard before accessing platform
+* Conditional layout rendering
 
-Global theme application through HTML data attributes
+### Deployment Ready
 
-🛠 Modern Tech Stack
-Frontend
-text
-React 18    React Router   Zustand     React Query
-Tailwind    DaisyUI        Stream SDK  Axios
-Backend
-text
-Node.js     Express.js     MongoDB     Mongoose
-JWT         Cookie Parser  CORS
-Deployment
-text
-Backend: Render
-Frontend: Static hosting
-Database: MongoDB Atlas
-🎯 Application Flow
-text
-1. AUTH → 2. ONBOARDING → 3. DISCOVER → 4. CHAT/CALL
-   ↓              ↓             ↓           ↓
-JWT Cookie  Profile Setup   User Search  Real-time Comm
-Detailed Flows:
+* Backend deployed on Render
+* Production build configuration
+* Environment‑based API configuration
 
-Authentication: Signup/Login → JWT cookie → Session validation → Protected access
+---
 
-Onboarding: Profile completion → Database persistence → Full platform access
+## Tech Stack
 
-Chat: Contact selection → Cached messages → Real-time updates → Optimistic UI
+### Frontend
 
-Calls: Call initiation → Dynamic route → Stream connection → Active communication
+* React
+* React Router DOM
+* Zustand (global theme state)
+* TanStack React Query (server state management)
+* Tailwind CSS + DaisyUI (UI and theming)
+* Stream Chat React SDK
+* Axios
+* Lucide Icons
 
-Themes: Selection → localStorage → Global HTML attribute → Instant UI refresh
+### Backend
 
-📁 Clean Architecture
-text
-ChatIn/
-├── backend/
-│   ├── controllers/    # Business logic
-│   ├── routes/         # API endpoints
-│   ├── models/         # MongoDB schemas
-│   ├── middleware/     # Auth & validation
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* JWT Authentication
+* Cookie Parser
+* CORS configuration
+* Stream API integration
+
+### Database
+
+* MongoDB
+
+### Deployment
+
+* Backend: Render
+* Frontend: Static production build hosting
+
+---
+
+## Application Flow
+
+### 1. Authentication Flow
+
+1. User signs up or logs in
+2. Server generates JWT and stores it in HTTP‑only cookie
+3. Frontend validates session using auth user query
+4. Unauthorized users are redirected to login
+
+### 2. Onboarding Flow
+
+1. New users redirected to onboarding page
+2. User completes profile details
+3. Profile stored in database
+4. User gains access to application features
+
+### 3. Chat Flow
+
+1. User selects a contact
+2. Chat route loads conversation
+3. Messages fetched and cached via React Query
+4. Real‑time updates handled via Stream SDK
+5. UI updates instantly with optimistic rendering
+
+### 4. Call Flow
+
+1. User initiates call
+2. Unique call route generated
+3. Stream handles connection between participants
+
+### 5. Theme Flow
+
+1. User selects theme
+2. Theme stored in localStorage
+3. HTML data attribute updated
+4. UI updates globally without reload
+
+---
+
+## Folder Structure
+
+```
+ChatIn
+│
+├── backend
+│   ├── controllers
+│   ├── routes
+│   ├── models
+│   ├── middleware
+│   ├── lib
 │   └── server.js
-├── frontend/
-│   ├── components/     # Reusable UI
-│   ├── pages/          # Route components
-│   ├── hooks/          # Custom React hooks
-│   ├── store/          # Zustand stores
+│
+├── frontend
+│   ├── components
+│   ├── pages
+│   ├── hooks
+│   ├── store
+│   ├── constants
+│   ├── lib
 │   └── main.jsx
-└── README.md
-🔌 Environment Variables
-Backend (.env)
+│
+└── package.json
+```
 
-bash
-PORT=5000
-MONGO_URI=your_mongo_connection_string
-JWT_SECRET=your_jwt_secret
-STREAM_API_KEY=your_stream_key
-STREAM_API_SECRET=your_stream_secret
-CLIENT_URL=http://localhost:5173
-Frontend (.env)
+---
 
-bash
-VITE_API_BASE_URL=http://localhost:5000/api
-VITE_STREAM_API_KEY=your_stream_key
-🚀 Quick Start
-bash
-# Clone & Install
+## Environment Variables
+
+### Backend (.env)
+
+```
+PORT=
+MONGO_URI=
+JWT_SECRET=
+STREAM_API_KEY=
+STREAM_API_SECRET=
+CLIENT_URL=
+```
+
+### Frontend (.env)
+
+```
+VITE_API_BASE_URL=
+VITE_STREAM_API_KEY=
+```
+
+---
+
+## Running Locally
+
+### Clone Repository
+
+```
 git clone <repo-url>
 cd ChatIn
-npm install
+```
 
-# Backend
+### Install Dependencies
+
+```
+npm install
+cd backend && npm install
+cd ../frontend && npm install
+```
+
+### Start Development Servers
+
+Backend
+
+```
 cd backend
-npm install
 npm run dev
+```
 
-# Frontend (new terminal)
+Frontend
+
+```
 cd frontend
-npm install
 npm run dev
-Production:
+```
 
-bash
-# Frontend Build
-cd frontend
+---
+
+## Production Build
+
+Frontend
+
+```
 npm run build
+```
 
-# Backend Production
-cd backend
+Backend
+
+```
 npm start
-📋 API Endpoints
-text
-Auth:
-POST /api/auth/signup
-POST /api/auth/login
-POST /api/auth/logout
-GET  /api/auth/me
+```
 
-Users:
-PUT  /api/users/onboarding
-GET  /api/users
+---
 
-Chat:
-GET  /api/chat/:id
-POST /api/chat/send
-🎓 Key Engineering Concepts
-Protected Route Architecture with granular access control
+## API Overview
 
-HTTP-only JWT Cookies for secure session management
+### Auth
 
-React Query for intelligent server state caching
+* POST /api/auth/signup
+* POST /api/auth/login
+* POST /api/auth/logout
+* GET /api/auth/me
 
-Zustand for lightweight global state
+### Users
 
-Stream SDK for production-grade real-time communication
+* PUT /api/users/onboarding
+* GET /api/users
 
-Modular Backend with RESTful API design
+### Chat
 
-Production Deployment configuration
+* GET /api/chat/:id
+* POST /api/chat/send
 
-🔮 Future Roadmap
-Group chat functionality
+---
 
-Message reactions and threading
+## Key Concepts Demonstrated
 
-File/image sharing
+* Protected route architecture
+* Persistent authentication using cookies
+* Global state management
+* Server state caching and invalidation
+* Real‑time communication integration
+* Production deployment configuration
+* Modular backend architecture
 
-Push notifications
+---
 
-Online presence indicators
+## Future Improvements
 
-Admin moderation dashboard
+* Group chat support
+* Message reactions
+* File sharing
+* Push notifications
+* Online presence indicators
+* Admin moderation tools
 
-📄 License
-Educational & portfolio project. Free to fork, modify, and showcase.
+---
 
-Built with ❤️ for language learners worldwide
+## License
 
-Would you like me to adjust the technical depth, add screenshots sections, or emphasize any particular feature more prominently?
-
-
-
+This project is for educational and portfolio purposes.
