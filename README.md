@@ -1,6 +1,6 @@
 # ChatIn — Real-Time Global Communication Platform
 
-## Live Demo
+## Working Link
 
 [https://chatin-livechatapp.onrender.com]
 
@@ -103,9 +103,7 @@ The system follows a modern client–server architecture using the MERN stack co
 
 ### Deployment
 
-* Backend: Render
-* Frontend: Static production build hosting
-
+* Render
 ---
 
 ## Application Flow
